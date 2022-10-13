@@ -1,4 +1,4 @@
-## <h1>calendar-typescript</a></h1>
+## Calendar-typescript
 
 ## Available Scripts
 
