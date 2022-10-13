@@ -44,3 +44,27 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+<h1><a href='https://dynamic-cheesecake-0241be.netlify.app/'>calendar-react-project</a></h1>
+
+<img src="src/img/calendar.jpg" height='150px' width='150px' alt='Calendar'/>
+
+<lu style="font-size:20px" ><b>The tech stack is:</b>
+
+<li ><a href="https://nodejs.org/en/" target="blank">Node</a></li>
+<li ><a href="https://www.npmjs.com/" target="blank">Npm</a></li>
+<li ><a href="https://git-scm.com/" target="blank">Git</a></li>
+<li ><a href='https://reactjs.org/'target="blank">React</a></li>
+<li ><a href='https://www.typescriptlang.org/'target="blank">Typescript</a></li>
+<li style="font-size:16px" ><a href="https://en.wikipedia.org/wiki/HTML5" target="blank">HTML5</a></li>
+<li style="font-size:16px" ><a href="https://www.npmjs.com/package/eslint" target="blank">Eslint</a></li>
+<li style="font-size:16px" ><a href="https://babeljs.io/" target="blank">Babel</a></li>
+<li style="font-size:16px" ><a href='https://webpack.js.org/'target="blank">Webpack</a></li>
+<li ><a href="https://sass-lang.com/" target="blank">Sass(Scss)</a></li>
+<li ><a href="https://en.bem.info/methodology/" target="blank">BEM methodology</a></li><br>
+
+</lu>
+
+<lu  style="font-size:20px" padding-top="10px" ><b>Author</b></lu>
+
+<li>Starkova Valentyna</li>
