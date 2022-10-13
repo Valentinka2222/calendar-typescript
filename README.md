@@ -1,4 +1,4 @@
-<h1><a href='https://valentinka2222.github.io/calendar-typescript/'>calendar-typescript</a></h1>
+## <h1>calendar-typescript</a></h1>
 
 ## Available Scripts
 
