@@ -45,7 +45,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-<h1><a href='https://dynamic-cheesecake-0241be.netlify.app/'>calendar-react-project</a></h1>
+<h1><a href='https://dynamic-cheesecake-0241be.netlify.app/'>calendar-typescript</a></h1>
 
 <img src="src/img/calendar.jpg" height='150px' width='150px' alt='Calendar'/>
 
