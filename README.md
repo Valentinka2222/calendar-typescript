@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1><a href='https://dynamic-cheesecake-0241be.netlify.app/'>calendar-typescript</a></h1>
 
 ## Available Scripts
 
