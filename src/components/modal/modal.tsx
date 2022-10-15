@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { updatedEventType } from '../../interfaces';
+import React, { useEffect, Dispatch, SetStateAction } from 'react';
+import { EventsType, hourEventsType } from '../../interfaces';
 import { сreateEvent } from '../../gateway/eventGateAway';
 import { getEventList } from '../../gateway/eventGateAway';
 import {
@@ -12,11 +12,11 @@ import {
 import './modal.scss';
 
 type ModalProps = {
-  updatedEvent: updatedEventType;
-  setUpdatedEvent: Function;
+  updatedEvent: EventsType;
+  setUpdatedEvent: Dispatch<SetStateAction<EventsType>>;
   isHiddenModal: boolean;
-  setIsHiddenModal: Function;
-  setEvents: Function;
+  setIsHiddenModal: Dispatch<boolean>;
+  setEvents: (events: hourEventsType[]) => void;
 };
 
 const Modal: React.FC<ModalProps> = ({
@@ -26,7 +26,10 @@ const Modal: React.FC<ModalProps> = ({
   setEvents,
   isHiddenModal,
 }) => {
-  const handleChange = (event: any) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!(event.target instanceof HTMLInputElement)) {
+      return;
+    }
     let startTimeEvent: string;
     let endTimeEvent: string;
     const { name, value } = event.target;
@@ -44,7 +47,7 @@ const Modal: React.FC<ModalProps> = ({
       endTimeEvent = date + ' ' + endTime;
     }
 
-    setUpdatedEvent((prevState: updatedEventType) => ({
+    setUpdatedEvent(prevState => ({
       ...prevState,
       [name]: value,
       dateFrom: startTimeEvent,
@@ -54,7 +57,7 @@ const Modal: React.FC<ModalProps> = ({
   useEffect(() => {
     getEventList().then(eventsList => setEvents(eventsList));
   }, []);
-  const handleSubmit = (event: any, eventData: updatedEventType) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>, eventData: EventsType) => {
     const { endTime, startTime, dateFrom } = eventData;
     if (validatorMultMin(endTime)) {
       alert('Time must be a multiple of 15 minutes');
@@ -82,7 +85,7 @@ const Modal: React.FC<ModalProps> = ({
     }
 
     event.preventDefault();
-    event.target.reset();
+    // event.target.reset();
   };
 
   const handleShowModal = () => {
@@ -130,8 +133,9 @@ const Modal: React.FC<ModalProps> = ({
                 className="event-form__field"
               />
             </div>
-            <textarea
-              onChange={handleChange}
+            <input
+              type="text"
+              onChange={e => handleChange(e)}
               name="description"
               value={updatedEvent.description}
               placeholder="Description"

@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, Dispatch } from 'react';
 import moment from 'moment';
-import { hourEventsType } from '../../interfaces';
+import { hourEventsType, EventsType } from '../../interfaces';
 import { deleteEvent, getEventList } from '../../gateway/eventGateAway';
 import './event.scss';
 import '../../common.scss';
 
 type EventProps = {
-  setIsHiddenModal: Function;
+  setIsHiddenModal: Dispatch<boolean>;
   height: number;
   marginTop: string;
   title: string;
   time: string;
   description: string;
   hourEvents: Array<hourEventsType>;
-  setEvents: Function;
+  setEvents: (events: hourEventsType[]) => void;
 };
 
 const Event: React.FC<EventProps> = ({
@@ -31,19 +31,19 @@ const Event: React.FC<EventProps> = ({
     height: height,
     marginTop,
   };
-  const handleClick = (e: any) => {
-    e.stopPropagation();
+  const handleClick = (event: React.MouseEvent<HTMLHeadingElement>) => {
+    event.stopPropagation();
     setIsHiddenModal(false);
     setIsShowDeleteEvent(!isShowDeleteEvent);
   };
 
-  const handleDeleteEvent = (e: any) => {
+  const handleDeleteEvent = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setIsHiddenModal(false);
 
     return hourEvents.map(({ id, date, dateFrom }) => {
-      let start = moment().format('YYYY/MM/DD HH:mm');
-      let diff = moment
+      const start = moment().format('YYYY/MM/DD HH:mm');
+      const diff = moment
         .duration(moment(dateFrom, 'YYYY/MM/DD HH:mm').diff(moment(start, 'YYYY/MM/DD HH:mm')))
         .asHours();
 

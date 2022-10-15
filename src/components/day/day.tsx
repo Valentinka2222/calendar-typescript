@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Dispatch } from 'react';
 import moment from 'moment';
 import Hour from '../hour/hour';
 import './day.scss';
+import { EventsType, hourEventsType } from '../../interfaces';
 
 type DayProps = {
-  changeValue: Function;
-  setIsHiddenModal: Function;
-  dataDay: any;
-  dayEvents: Array<any>;
-  setEvents: Function;
+  changeValue: (a: string) => void;
+  setIsHiddenModal: Dispatch<boolean>;
+  dataDay: number;
+  dayEvents: Array<string | number | any>;
+  setEvents: (events: hourEventsType[]) => void;
 };
 
 const Day: React.FC<DayProps> = ({

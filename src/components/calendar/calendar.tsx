@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import Navigation from '../navigation/navigation';
 import Week from '../week/week';
 import Sidebar from '../sidebar/sidebar';
-import { TupleType } from 'typescript';
+import { hourEventsType } from '../../interfaces';
 import './calendar.scss';
 
 type CalendarProps = {
-  setIsHiddenModal: Function;
-  changeValue: Function;
+  setIsHiddenModal: Dispatch<boolean>;
+  changeValue: (a: string) => void;
   weekDates: any;
-  events: Array<TupleType>;
-  setEvents: Function;
+  events: hourEventsType[];
+  setEvents: (events: hourEventsType[]) => void;
 };
 
 const Calendar: React.FC<CalendarProps> = ({

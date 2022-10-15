@@ -1,4 +1,4 @@
-import { updatedEventType } from '../interfaces';
+import { EventsType } from '../interfaces';
 
 const baseUrl = 'https://62641c97a6adc673188dbf69.mockapi.io/tasklist/api/v1/events';
 
@@ -22,7 +22,7 @@ export const deleteEvent = (id: number) => {
     }
   });
 };
-export const сreateEvent = (formData: updatedEventType) => {
+export const сreateEvent = (formData: EventsType) => {
   return fetch(`${baseUrl}/`, {
     method: 'POST',
     headers: {

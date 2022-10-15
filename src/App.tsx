@@ -5,12 +5,13 @@ import Calendar from './components/calendar/calendar';
 import Modal from './components/modal/modal';
 import { getWeekStartDate, generateWeekRange } from '../src/utils/dateUtils';
 import './common.scss';
+import { EventsType, hourEventsType } from './interfaces';
 
 export const App = () => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState<hourEventsType[]>([]);
   const [weekStartDate, setWeekStartDate] = useState(new Date());
-  const [isHiddenModal, setIsHiddenModal] = useState(false);
-  const [updatedEvent, setUpdatedEvent] = useState({
+  const [isHiddenModal, setIsHiddenModal] = useState<boolean>();
+  const [updatedEvent, setUpdatedEvent] = useState<EventsType>({
     date: '',
     startTime: '',
     endTime: '',
@@ -32,7 +33,7 @@ export const App = () => {
       }));
     }
   };
-  const changeValue = (newDate: string) =>
+  const changeValue = (newDate: string) => {
     setUpdatedEvent(prevState => ({
       ...prevState,
       title: '',
@@ -44,7 +45,8 @@ export const App = () => {
       dateTo:
         moment(newDate).format('YYYY-MM-DD') + ' ' + moment(newDate).add(1, 'hour').format('HH:mm'),
     }));
-
+  };
+  console.log(updatedEvent);
   const handleCurrentWeek = () => setWeekStartDate(weekStartDate => (weekStartDate = new Date()));
 
   const handleNextWeek = () =>

@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import moment from 'moment';
-import { hourEventsType } from '../../interfaces';
 import { formatMins } from '../../utils/dateUtils';
+import { hourEventsType, EventsType } from '../../interfaces';
 import Event from '../event/event';
 
 type HourProps = {
   dataHour: any;
   hourEvents: Array<hourEventsType>;
-  setEvents: Function;
-  changeValue: Function;
+  setEvents: (events: hourEventsType[]) => void;
+
+  changeValue: (a: string) => void;
   dataDay: number;
-  setIsHiddenModal: Function;
+  setIsHiddenModal: Dispatch<boolean>;
 };
 
 const Hour: React.FC<HourProps> = (
   { dataHour, hourEvents, setEvents, changeValue, dataDay, setIsHiddenModal }, // isHiddenModal,
 ) => {
-  const handleClick = (e: any) => {
+  const handleClick = (e: React.SyntheticEvent<EventTarget>) => {
     setIsHiddenModal(true);
-
+    if (!(e.target instanceof HTMLDivElement)) {
+      return;
+    }
     const createDateStartEvent =
       moment().format('YYYY-MM-') +
       formatMins(Number(dataDay)) +
