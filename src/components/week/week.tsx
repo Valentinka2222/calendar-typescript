@@ -1,15 +1,6 @@
-import React, { Dispatch } from 'react';
-import { hourEventsType, EventsType } from '../../interfaces';
+import WeekProps from '../../entities/week';
 import Day from '../day/day';
 import './week.scss';
-
-type WeekProps = {
-  changeValue: (a: string) => void;
-  setIsHiddenModal: Dispatch<boolean>;
-  weekDates: [any];
-  events: hourEventsType[];
-  setEvents: (events: hourEventsType[]) => void;
-};
 
 const Week = ({ changeValue, setIsHiddenModal, weekDates, events, setEvents }: WeekProps) => {
   return (

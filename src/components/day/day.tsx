@@ -1,16 +1,8 @@
-import React, { useState, useEffect, Dispatch } from 'react';
+import React, { useState, useEffect} from 'react';
 import moment from 'moment';
 import Hour from '../hour/hour';
 import './day.scss';
-import { EventsType, hourEventsType } from '../../interfaces';
-
-type DayProps = {
-  changeValue: (a: string) => void;
-  setIsHiddenModal: Dispatch<boolean>;
-  dataDay: number;
-  dayEvents: Array<string | number | any>;
-  setEvents: (events: hourEventsType[]) => void;
-};
+import DayProps from '../../entities/day';
 
 const Day: React.FC<DayProps> = ({
   changeValue,
@@ -45,8 +37,8 @@ const Day: React.FC<DayProps> = ({
       {hours.map(hour => {
         const hourEvents = dayEvents.filter(
           event =>
-            Number(moment(event.dateFrom).format('HH')) === hour &&
-            Number(moment(event.dateFrom).format('DD')) === dataDay,
+            Number(moment(event['dateFrom']).format('HH')) === hour &&
+            Number(moment(event['dateFrom']).format('DD')) === dataDay,
         );
 
         return (

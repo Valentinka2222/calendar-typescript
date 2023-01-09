@@ -1,18 +1,8 @@
-import React, { Dispatch } from 'react';
+import React from 'react';
 import moment from 'moment';
 import { formatMins } from '../../utils/dateUtils';
-import { hourEventsType, EventsType } from '../../interfaces';
+import HourProps from '../../entities/hour';
 import Event from '../event/event';
-
-type HourProps = {
-  dataHour: any;
-  hourEvents: Array<hourEventsType>;
-  setEvents: (events: hourEventsType[]) => void;
-
-  changeValue: (a: string) => void;
-  dataDay: number;
-  setIsHiddenModal: Dispatch<boolean>;
-};
 
 const Hour: React.FC<HourProps> = (
   { dataHour, hourEvents, setEvents, changeValue, dataDay, setIsHiddenModal }, // isHiddenModal,

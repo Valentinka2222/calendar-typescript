@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { updatedEventType } from '../interfaces';
+import { updatedEventType } from '../entities/interfaces';
 
 export const validatorHaveEvent = (eventsList: [updatedEventType], dateFrom: string) => {
   const sameEvent = eventsList.some(

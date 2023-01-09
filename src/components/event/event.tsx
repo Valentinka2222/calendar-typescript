@@ -1,20 +1,9 @@
-import React, { useState, Dispatch } from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
-import { hourEventsType, EventsType } from '../../interfaces';
+import EventProps from '../../entities/event';
 import { deleteEvent, getEventList } from '../../gateway/eventGateAway';
 import './event.scss';
 import '../../common.scss';
-
-type EventProps = {
-  setIsHiddenModal: Dispatch<boolean>;
-  height: number;
-  marginTop: string;
-  title: string;
-  time: string;
-  description: string;
-  hourEvents: Array<hourEventsType>;
-  setEvents: (events: hourEventsType[]) => void;
-};
 
 const Event: React.FC<EventProps> = ({
   setIsHiddenModal,

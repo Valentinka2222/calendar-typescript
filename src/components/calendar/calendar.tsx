@@ -1,17 +1,11 @@
-import React, { Dispatch } from 'react';
+import React from 'react';
 import Navigation from '../navigation/navigation';
 import Week from '../week/week';
 import Sidebar from '../sidebar/sidebar';
-import { hourEventsType } from '../../interfaces';
-import './calendar.scss';
 
-type CalendarProps = {
-  setIsHiddenModal: Dispatch<boolean>;
-  changeValue: (a: string) => void;
-  weekDates: any;
-  events: hourEventsType[];
-  setEvents: (events: hourEventsType[]) => void;
-};
+import CalendarProps from '../../entities/calendar';
+
+import './calendar.scss';
 
 const Calendar: React.FC<CalendarProps> = ({
   setIsHiddenModal,

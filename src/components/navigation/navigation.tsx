@@ -1,10 +1,7 @@
 import React from 'react';
 import moment from 'moment';
+import NavigationType from '../../entities/navigation';
 import { days } from '../../utils/dateUtils';
-
-type NavigationType = {
-  navWeekDates: [any];
-};
 
 const Navigation: React.FC<NavigationType> = ({ navWeekDates }) => {
   const isCurrentDay = (currentDay: string) =>

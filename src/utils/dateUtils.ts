@@ -1,4 +1,4 @@
-export const getWeekStartDate = (date: any) => {
+export const getWeekStartDate = (date: Date) => {
   const dateCopy = new Date(date);
   const dayOfWeek = dateCopy.getDay();
   const difference =
@@ -10,7 +10,7 @@ export const getWeekStartDate = (date: any) => {
   return new Date(monday.getFullYear(), monday.getMonth(), monday.getDate());
 };
 
-export const generateWeekRange = (startDate: any) => {
+export const generateWeekRange = (startDate: Date) => {
   const result = [];
   for (let i = 0; i < 7; i += 1) {
     const base = new Date(startDate);

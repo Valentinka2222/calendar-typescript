@@ -1,5 +1,6 @@
-import React, { useEffect, Dispatch, SetStateAction } from 'react';
-import { EventsType, hourEventsType } from '../../interfaces';
+import React, { useEffect} from 'react';
+import { EventsType } from '../../entities/interfaces';
+import ModalProps from '../../entities/modal';
 import { сreateEvent } from '../../gateway/eventGateAway';
 import { getEventList } from '../../gateway/eventGateAway';
 import {
@@ -10,14 +11,6 @@ import {
   validatorEventDuration,
 } from '../../validators/validators';
 import './modal.scss';
-
-type ModalProps = {
-  updatedEvent: EventsType;
-  setUpdatedEvent: Dispatch<SetStateAction<EventsType>>;
-  isHiddenModal: boolean;
-  setIsHiddenModal: Dispatch<boolean>;
-  setEvents: (events: hourEventsType[]) => void;
-};
 
 const Modal: React.FC<ModalProps> = ({
   setIsHiddenModal,

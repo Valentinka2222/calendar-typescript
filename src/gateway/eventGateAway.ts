@@ -1,4 +1,4 @@
-import { EventsType } from '../interfaces';
+import { EventsType } from '../entities/interfaces';
 
 const baseUrl = 'https://62641c97a6adc673188dbf69.mockapi.io/tasklist/api/v1/events';
 
