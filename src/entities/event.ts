@@ -1,7 +1,6 @@
 import { Dispatch } from 'react';
 import { hourEventsType } from './interfaces';
 
-
 type EventProps = {
   setIsHiddenModal: Dispatch<boolean>;
   height: number;
